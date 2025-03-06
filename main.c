@@ -140,10 +140,10 @@ int main(void){
 }
 
 void Timer_Config(void){
-	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM2, ENABLE);
+  RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM2, ENABLE);
 	
   TIM_TimeBaseInitTypeDef Timer;
-	Timer.TIM_Period = 0xFFFF;
+  Timer.TIM_Period = 0xFFFF;
   Timer.TIM_Prescaler = 72 - 1;
   Timer.TIM_CounterMode = TIM_CounterMode_Up;
   TIM_TimeBaseInit(TIM2, &Timer);
@@ -157,12 +157,12 @@ void Delay_us(uint32_t us) {
 
 void Delay_ms(uint32_t ms) {
   while(ms--) {
-		Delay_us(1000);
+    Delay_us(1000);
   }
 }
 
 void USART_Config(void) {
-	RCC_APB2PeriphClockCmd(RCC_APB2Periph_USART1 | RCC_APB2Periph_GPIOA, ENABLE);
+  RCC_APB2PeriphClockCmd(RCC_APB2Periph_USART1 | RCC_APB2Periph_GPIOA, ENABLE);
     
   GPIO_InitTypeDef gpio;
 	
@@ -199,13 +199,13 @@ void USART_SendString(char *str){
 }
 
 void USART_SendNumber(uint8_t num){
-	char buffer[5]; 
+  char buffer[5]; 
   sprintf(buffer, "%d", num); 
   USART_SendString(buffer);  
 }
 
 void DHT11_Config(void) {
-	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB, ENABLE);
+  RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB, ENABLE);
   GPIO_InitTypeDef gpio;
 	
   gpio.GPIO_Pin = GPIO_Pin_12;
