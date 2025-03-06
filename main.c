@@ -166,13 +166,13 @@ void USART_Config(void) {
     
   GPIO_InitTypeDef gpio;
 	
-	//PA9 - Tx
+  //PA9 - Tx
   gpio.GPIO_Pin = GPIO_Pin_9;
   gpio.GPIO_Mode = GPIO_Mode_AF_PP;
   gpio.GPIO_Speed = GPIO_Speed_50MHz;
   GPIO_Init(GPIOA, &gpio);
 	
-	//PA10 - Rx
+  //PA10 - Rx
   gpio.GPIO_Pin = GPIO_Pin_10;
   gpio.GPIO_Mode = GPIO_Mode_IN_FLOATING;
   GPIO_Init(GPIOA, &gpio);
